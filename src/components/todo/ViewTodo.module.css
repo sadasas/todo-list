@@ -1,0 +1,39 @@
+.viewList {
+  background-color: #dcd9d9;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  border-radius: 20px;
+}
+
+.list {
+  margin: 0;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  gap: 0 10px;
+  padding: 0 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.list:hover {
+  background-color: black;
+  color: white;
+}
+
+.list > * {
+  overflow: hidden;
+}
+
+.title {
+  width: 80%;
+}
+
+.tag {
+  align-self: self-end;
+  width: 20%;
+  font-size: 1rem;
+  text-align: center;
+}
