@@ -17,10 +17,17 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state: TodoState, action) => {
+      if (action.payload.value.content === "") return;
       state.value.push({
         id: state.value[state.value.length - 1].id + 1,
         ...action.payload.value,
       });
+      console.log(state.value.length);
+    },
+    removeTodo: (state: TodoState, action) => {
+      state.value
+        .filter((content) => content.id !== action.payload.value.id)
+        .map();
     },
   },
 });
