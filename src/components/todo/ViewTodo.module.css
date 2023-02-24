@@ -27,8 +27,12 @@
   overflow: hidden;
 }
 
+.list h2 {
+  flex: 0.1;
+}
+
 .title {
-  width: 80%;
+  flex: 1;
 }
 
 .tag {

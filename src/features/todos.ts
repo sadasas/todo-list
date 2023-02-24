@@ -22,15 +22,13 @@ const todoSlice = createSlice({
         id: state.value[state.value.length - 1].id + 1,
         ...action.payload.value,
       });
-      console.log(state.value.length);
     },
     removeTodo: (state: TodoState, action) => {
-      state.value
-        .filter((content) => content.id !== action.payload.value.id)
-        .map();
+      state.value.splice(action.payload.value.id, 1);
+      state.value.map((content, index) => (content.id = index));
     },
   },
 });
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, removeTodo } = todoSlice.actions;
 export default todoSlice.reducer;

@@ -1,4 +1,4 @@
-# todo-list
+# simple todo-list
 
 ### Build with React
 
