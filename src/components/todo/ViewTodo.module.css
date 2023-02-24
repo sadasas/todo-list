@@ -16,6 +16,8 @@
   padding: 0 10px;
   background-color: white;
   border-radius: 20px;
+  transition: all;
+  transition-duration: 300px;
 }
 
 .list:hover {

@@ -1,4 +1,4 @@
-import { RiDeleteBin6Line } from "@react-icons/all-files/Ri/RiDeleteBin6Line";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeTodo } from "../../features/todos";
