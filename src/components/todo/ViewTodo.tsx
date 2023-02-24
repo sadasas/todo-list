@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAppSelector } from "../../app/hooks";
+import CheckTodo from "./CheckTodo";
 import DeleteTodo from "./DeleteTodo";
 import style from "./ViewTodo.module.css";
 
@@ -17,9 +18,10 @@ function ViewTodo() {
     >
       {todoList
         .filter((x) => x.content !== "")
-        .map((todo, index) => {
+        .map((todo) => {
           return (
             <div key={todo.id} className={style.list}>
+              <CheckTodo index={todo.id} />
               <h1 className={style.title}>{todo.content}</h1>
               {hover && <DeleteTodo index={todo.id} />}
             </div>

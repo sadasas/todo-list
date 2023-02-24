@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface TodoState {
-  value: [{ id: number; content: string }];
+  value: [{ id: number; content: string; finished: boolean }];
 }
 
 const initialState: TodoState = {
@@ -9,6 +9,7 @@ const initialState: TodoState = {
     {
       id: 0,
       content: "",
+      finished: false,
     },
   ],
 };
@@ -23,6 +24,16 @@ const todoSlice = createSlice({
         ...action.payload.value,
       });
     },
+    updateTodo: (state: TodoState, action) => {
+      state.value.map((content) => {
+        if (
+          content.id == action.payload.value.id &&
+          action.payload.type === "CHECK"
+        ) {
+          content.finished = !content.finished;
+        }
+      });
+    },
     removeTodo: (state: TodoState, action) => {
       state.value.splice(action.payload.value.id, 1);
       state.value.map((content, index) => (content.id = index));
@@ -30,5 +41,5 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, updateTodo } = todoSlice.actions;
 export default todoSlice.reducer;
